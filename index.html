@@ -1,0 +1,60 @@
+<head>
+	<title>HALLOWEEN JUMPSCARE</title>
+	<script src="collection/1.js"></script>
+	<script>
+		URLGrab=new URL(location.href)
+		DestURL=URLGrab.searchParams.get('url')
+		function changetodest(){
+			Content[Math.floor(Math.random()*Content.length)];
+			PickedContent=Content[Math.floor(Math.random()*Content.length)];
+			open(PickedContent);
+			location=DestURL;
+		}
+		function makelink(){
+		 YourLink=document.getElementsByTagName('input')[0].value
+		 document.getElementsByName('userlink')[0].innerHTML='Here is your link >> https://manifoldhydra80.github.io/halloween?url='+YourLink+' <a href="?url='+YourLink+'">Test Link</a>'
+		}
+		function noshowwarning(){
+			localStorage.setItem('takingthehalloweenrisk','yes');
+			document.getElementsByName('noshowwarning')[0].disabled=true;
+			alert('The warning has been disabled good luck :)')
+		}
+		if (DestURL){
+			if (localStorage.getItem('takingthehalloweenrisk')=='yes'){
+				changetodest();
+			} else {
+				document.write('<center><h1>WARNING</h1><h2>These content may be scary to some people, if want to take the risk by watching these types of content plz click the button below</h2><p><button onclick="changetodest()">OPEN LINK</button></p><p><button name="noshowwarning" onclick="noshowwarning()">DO NOT SHOW THAT WARNING AGAIN</button></p></center>')
+			}
+		}
+	</script>
+	<style>
+	body {
+    background-color: black;
+    color: orange;
+    font-family: math;
+	}
+	</style>
+</head>
+<body>
+	<noscript><center><p>Please Turn On JavaScript So This Project Can Work</p></center></noscript>
+	<center>
+	<h1>WECOME TO THE HALLOWEEN JUMPSCARE</h1>
+	<h2>Try these links below</h2>
+	<p>
+		<a href="?url=https://google.com">google.com</a>
+		<a href="?url=https://youtube.com">youtube.com</a>
+		<a href="?url=https://tiktok.com">tiktok.com</a>
+		<a href="?url=https://costco.com.au">costco.com.au</a>
+		<a href="?url=https://en.wikipedia.org">en.wikipedia.org</a>
+		<a href="?url=https://facebook.com">facebook.com</a>
+		<a href="?url=https://twitter.com">twitter.com</a>
+		<a href="?url=https://disney.fandom.com/">disney.fandom.com</a>
+	</p>
+	<h2>--- OR ---</h2>
+	<h2>Make a link and share it</h2>
+	<p><input placeholder="Enter URL"></input> <button onclick="makelink()">MAKE LINK</button></p>
+	<p name="userlink"></p>
+	<h1>THEN A HALLOWEEN VIDEO WILL SHOW!!!</h1>
+	<p><a href="https://youtu.be/M6G8Z4XhL04">Demonstration Video</a></p>
+	</center>
+</body>
